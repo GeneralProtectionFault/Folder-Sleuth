@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Folder Sleuth", "Folder Sleuth.csproj", "{58820DC6-52FD-4EE8-BD24-E4B18DE53D26}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58820DC6-52FD-4EE8-BD24-E4B18DE53D26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58820DC6-52FD-4EE8-BD24-E4B18DE53D26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58820DC6-52FD-4EE8-BD24-E4B18DE53D26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58820DC6-52FD-4EE8-BD24-E4B18DE53D26}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5673B4E2-EC4E-4369-A5E8-37EFB1FE29ED}
+	EndGlobalSection
+EndGlobal

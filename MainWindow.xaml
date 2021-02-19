@@ -1,0 +1,69 @@
+﻿<Window x:Name="txtStringsToSearch" x:Class="Folder_Sleuth.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Folder_Sleuth"
+        mc:Ignorable="d"
+        Title="Folder Sleuth" Height="888" Width="1244">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black"/>
+            <GradientStop Color="White" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="637*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1235*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF4F004C"/>
+                <GradientStop Color="Black" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Margin="28,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" AcceptsReturn="True" Width="447" Height="143" Grid.Column="1" Grid.RowSpan="2"/>
+        <Label x:Name="lblSearch" Content="Locate any files/directories containing any of the following text (separate by line):" HorizontalAlignment="Left" Margin="28,30,0,0" VerticalAlignment="Top" Width="447" Foreground="White" Grid.Column="1" Height="26" Grid.RowSpan="2"/>
+        <Label x:Name="lblFolder" Content="Folder to search" HorizontalAlignment="Right" Margin="0,25,354,0" VerticalAlignment="Top" Width="231" Foreground="White" Grid.Column="1" Height="26" Grid.RowSpan="2"/>
+        <TextBox x:Name="txtFolder" HorizontalAlignment="Right" Margin="0,56,35,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="550" Grid.Column="1" Height="18" Grid.RowSpan="2"/>
+        <CheckBox x:Name="chkSubfolders" Content="Include subfolders" HorizontalAlignment="Right" Margin="0,79,468,0" VerticalAlignment="Top" Foreground="White" Grid.Column="1" Height="15" Width="117" Grid.RowSpan="2"/>
+        <Label x:Name="lblFound" Content="Strings Found" HorizontalAlignment="Left" Margin="28,250,0,0" VerticalAlignment="Top" Width="231" Foreground="White" Grid.Column="1" Height="26" Grid.RowSpan="2"/>
+        <Label x:Name="lblNotFound" Content="Strings Not Found" HorizontalAlignment="Left" Margin="654,250,0,0" VerticalAlignment="Top" Width="231" Foreground="White" Grid.Column="1" Height="26" Grid.RowSpan="2"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Right" Margin="0,99,454,0" VerticalAlignment="Top" Height="35" Width="131" Foreground="White" FontWeight="Bold" Click="btnSearch_Click" Grid.Column="1" Grid.RowSpan="2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF00FFA2" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="txtFound" HorizontalAlignment="Left" Margin="28,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="595" Height="177" Background="#83FFFFFF" Grid.Column="1" Grid.RowSpan="2"/>
+        <TextBox x:Name="txtNotFound" HorizontalAlignment="Right" Margin="0,281,35,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="550" Height="177" Background="#7FFFFFFF" Grid.Column="1" Grid.RowSpan="2"/>
+        <Label x:Name="lblMove" Content="Move Found Items To:" HorizontalAlignment="Left" Margin="28,0,0,348" VerticalAlignment="Bottom" Width="231" Foreground="White" Grid.Column="1" Height="26" Grid.RowSpan="2"/>
+        <TextBox x:Name="txtDestinationFolder" HorizontalAlignment="Left" Margin="28,0,0,330" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="595" Grid.Column="1" Height="18" Grid.RowSpan="2"/>
+        <Button x:Name="btnMove" Content="MOVE" HorizontalAlignment="Left" Margin="28,0,0,298" VerticalAlignment="Bottom" Height="27" Width="114" Foreground="White" FontWeight="Bold" Click="btnMove_Click" Grid.Column="1" Grid.RowSpan="2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFA00000" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock x:Name="txtStatusBar" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Bottom" Background="#E5E7F5FF" Height="28" Width="1242" Grid.RowSpan="2" Grid.Column="1"/>
+        <GroupBox x:Name="grpSearchButtons" Header="Search Options" Margin="0,139,271,653" Foreground="White" HorizontalAlignment="Right" Width="314" Grid.Column="1" Grid.RowSpan="2"/>
+        <RadioButton x:Name="btnFolderSearch" Content="Search For Folders" HorizontalAlignment="Right" Margin="0,167,296,0" VerticalAlignment="Top" Foreground="White" Grid.Column="1" Height="15" Width="116" Grid.RowSpan="2"/>
+        <RadioButton x:Name="btnFileSearch" IsChecked="True" Content="Search For Files" HorizontalAlignment="Right" Margin="0,167,468,0" VerticalAlignment="Top" Foreground="White" Grid.Column="1" Height="15" Width="101" Grid.RowSpan="2"/>
+        <ProgressBar x:Name="progressBar" HorizontalAlignment="Center" Height="15" Margin="3,0,0,28" VerticalAlignment="Bottom" Width="1237" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtErrors" Grid.Column="1" HorizontalAlignment="Left" Margin="28,0,0,48" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="1176" Height="197" Background="{x:Null}" Foreground="White" TextChanged="txtErrors_TextChanged"/>
+        <Label x:Name="lblErrors" Content="Move Errors:" HorizontalAlignment="Left" Margin="28,0,0,250" VerticalAlignment="Bottom" Width="231" Foreground="White" Grid.Column="1" Height="26" Grid.RowSpan="2"/>
+
+
+    </Grid>
+</Window>
